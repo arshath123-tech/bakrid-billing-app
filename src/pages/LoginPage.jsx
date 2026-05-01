@@ -74,7 +74,7 @@ export default function LoginPage({ onLogin }) {
         </form>
 
         <div style={{ textAlign: "center", marginTop: 20, color: "var(--text3)", fontSize: 11 }}>
-          Default: admin / bakrid2024
+          
         </div>
       </div>
     </div>
