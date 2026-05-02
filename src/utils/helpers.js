@@ -119,12 +119,15 @@ export function calcPayment(grandTotal, cashPaid, gpayPaid) {
 export function calcSalesSummary(bills) {
   let totalAmount = 0, totalCash = 0, totalGpay = 0, totalBalance = 0;
   let totalSmallGoats = 0, totalBigGoats = 0, totalSmallKg = 0;
+  let totalSmallCutting = 0, totalBigCutting = 0;
 
   bills.forEach((b) => {
     totalAmount += b.grandTotal || 0;
     totalCash += b.cashPaid || 0;
     totalGpay += b.gpayPaid || 0;
     totalBalance += b.balance || 0;
+    totalSmallCutting += b.smallGoatCutting || 0;
+    totalBigCutting += b.bigGoatCutting || 0;
 
     if (b.smallRows) {
       b.smallRows.forEach((r) => {
@@ -156,5 +159,7 @@ export function calcSalesSummary(bills) {
     totalSmallGoats: +totalSmallGoats.toFixed(0),
     totalBigGoats: +totalBigGoats.toFixed(0),
     totalSmallKg: +totalSmallKg.toFixed(2),
+    totalSmallCutting: +totalSmallCutting.toFixed(0),
+    totalBigCutting: +totalBigCutting.toFixed(0),
   };
 }

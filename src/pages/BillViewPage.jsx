@@ -115,10 +115,12 @@ export default function BillViewPage({ onLogout }) {
         .bill-page-wrapper {
           width: ${paperDims.w}mm !important;
           min-height: ${paperDims.h}mm !important;
+          height: auto !important;
           padding: ${Math.max(4, Math.round(paperDims.w * 0.04))}mm !important;
           box-sizing: border-box !important;
           page-break-after: avoid !important;
           page-break-inside: avoid !important;
+          break-inside: avoid !important;
         }
       }
     `,
@@ -197,8 +199,7 @@ export default function BillViewPage({ onLogout }) {
           style={{
             width: billW,
             minHeight: billH,
-            maxHeight: billH,
-            overflow: "hidden",
+            height: "auto",
             background: "#fff",
             color: "#111",
             fontFamily: "'Tajawal', sans-serif",

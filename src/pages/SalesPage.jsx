@@ -58,6 +58,27 @@ function SalesContent({ bills, accentColor }) {
         </div>
       </div>
 
+      {/* Cutting Summary */}
+      {(s.totalSmallCutting > 0 || s.totalBigCutting > 0) && (
+        <div style={{ marginBottom: 12 }}>
+          <div style={{ fontSize: 10, color: "var(--text3)", textTransform: "uppercase", letterSpacing: "1px", marginBottom: 8, fontWeight: 600 }}>
+            🔪 Total Cutting
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+            <CountBox
+              label="Small Cutting" icon="🔪"
+              count={s.totalSmallCutting}
+              color="var(--gold)"
+            />
+            <CountBox
+              label="Big Cutting" icon="🔪"
+              count={s.totalBigCutting}
+              color="var(--gold2)"
+            />
+          </div>
+        </div>
+      )}
+
       <div style={{ borderTop: "1px solid var(--border)", margin: "10px 0" }} />
 
       {/* Financials */}
